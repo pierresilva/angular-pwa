@@ -1,0 +1,31 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 300px;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+}
+
+.mat-expansion-panel:not([class*=mat-elevation-z]) {
+  box-shadow: none !important;
+}
+
+
+.mat-drawer.mat-drawer-side {
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.24), 0 0 16px rgba(0, 0, 0, 0.12);
+  margin: 0px;
+}
+
+.toolbar-icon {
+  padding: 0 14px;
+}
+
+.toolbar-spacer {
+  flex: 1 1 auto;
+}

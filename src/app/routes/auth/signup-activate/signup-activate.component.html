@@ -1,0 +1,38 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+  <div class="app-logo">
+    <a [routerLink]="['/']">
+      <img src="assets/angular-pwa-logo.png">
+    </a>
+  </div>
+  <div class="auth-card-content" *ngIf="!verified && !verifyFails" fxLayoutAlign="center">
+    <div>
+      <mat-spinner style="margin-left: 80px;"></mat-spinner>
+      <h3>
+        Estamos verificando su cuenta!
+      </h3>
+    </div>
+  </div>
+
+  <div class="auth-card-content" *ngIf="verified" fxLayoutAlign="center">
+    <div>
+      <mat-icon class="auth-success-icon" style="margin-left: 60px;">check_circle_outline</mat-icon>
+      <h3>
+        Cuenta verificada con éxito!
+      </h3>
+      <a mat-stroked-button [routerLink]="['/auth/login']" style="margin-left: 64px;">INGRESAR</a>
+    </div>
+  </div>
+
+  <div class="auth-card-content" *ngIf="verifyFails" fxLayoutAlign="center">
+    <div>
+      <mat-icon class="auth-error-icon" style="margin-left: 90px;">error_outline</mat-icon>
+      <h3>
+        No hemos podido verificar su cuenta!
+        <br>
+        {{verifyFailsMessage}}
+      </h3>
+      <a mat-raised-button href="javascript:void(0);" style="margin-left: 40px;">REENVIAR LINK DE ACTIVACIÓN</a>
+    </div>
+  </div>
+
+</div>

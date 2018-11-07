@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  SERVER_URL: './',
+  BACKEND_WEB_URL: 'http://lapp-baseline.test/',
+  BACKEND_API_URL: 'http://lapp-baseline.test/api/'
 };
 
 /*

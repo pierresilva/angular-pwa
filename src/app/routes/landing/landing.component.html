@@ -1,0 +1,63 @@
+<p>
+  <mat-form-field>
+    <input matInput [matDatepicker]="picker" placeholder="Seleccione una fecha">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+</p>
+<div [acl]="['user', 'admin']">Some hidden content...</div>
+<!-- The user must have a user role to display the element -->
+<div [acl]="'user'">Action (role: user)</div>
+<!-- The user must have a user or manage role to display the element -->
+<div [acl]="['user', 'admin']">Action (role: user or admin)</div>
+<!-- The user must have a user and manage role display the element -->
+<div [acl]="{ role: ['user', 'admin'], mode: 'allOf' }">Action (role: user and admin)</div>
+<!-- The user must have a can.press ability to display the element -->
+<div [acl]="'user.default'">Action (ability: user.default)</div>
+<!-- The user must have a can.press ability to display the element -->
+<div acl [acl-ability]="'user.default'">Action (ability: user.default)</div>
+<!-- The user must have a 10 and 11 points permission to display the element -->
+<div [acl]="{ ability: ['user.default', 'admin.default'], mode: 'allOf' }">Action (ability: user.default and
+  admin.default)</div>
+<div>
+  <button (click)="setRole(['admin'])">Set user role: manage</button><br>
+  <button (click)="setRole(['user'])">Set user role: user</button><br>
+  <button (click)="setRole()">Set user role: null</button><br>
+  <button (click)="setAbility(['user.default'])">Set user ability: user.default</button><br>
+  <button (click)="setAbility(['admin.default'])">Set user ability: admin.default</button><br>
+  <button (click)="setAbility()">Set user ability: null</button><br>
+  <button (click)="setFullAccess()">Set user to full access</button><br>
+  <button (click)="setNoneAccess()">Set user to none access</button><br>
+</div>
+<p>
+  {{ 'language' | translate }}<br>
+  {{ '200.60' | _currency}} <br>
+</p>
+<div *ngFor="let item of data | keys">{{item.key}}: {{item.value | json}}</div>
+<div>
+  <button (click)="getTest()">HttpRequest</button>
+</div>
+<p>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda odio deleniti at eligendi laudantium culpa
+  perferendis, sunt cupiditate ea eaque earum magnam! Eos sequi quia fuga possimus, officia autem incidunt!
+</p>
+<p>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda odio deleniti at eligendi laudantium culpa
+  perferendis, sunt cupiditate ea eaque earum magnam! Eos sequi quia fuga possimus, officia autem incidunt!
+</p>
+<p>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda odio deleniti at eligendi laudantium culpa
+  perferendis, sunt cupiditate ea eaque earum magnam! Eos sequi quia fuga possimus, officia autem incidunt!
+</p>
+<p>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda odio deleniti at eligendi laudantium culpa
+  perferendis, sunt cupiditate ea eaque earum magnam! Eos sequi quia fuga possimus, officia autem incidunt!
+</p>
+<p>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda odio deleniti at eligendi laudantium culpa
+  perferendis, sunt cupiditate ea eaque earum magnam! Eos sequi quia fuga possimus, officia autem incidunt!
+</p>
+<p>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda odio deleniti at eligendi laudantium culpa
+  perferendis, sunt cupiditate ea eaque earum magnam! Eos sequi quia fuga possimus, officia autem incidunt!
+</p>

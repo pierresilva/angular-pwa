@@ -1,0 +1,85 @@
+.auth-card {
+  padding: 0px !important;
+  width: 100%;
+
+  .auth-card-header {
+    padding: 10px;
+
+    .auth-card-header-image {
+      background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+      background-size: cover;
+    }
+  }
+
+  .auth-card-content {
+    padding-top: 24px;
+    padding-right: 24px;
+    padding-left: 24px;
+    margin-bottom: 0px;
+    align-content: center;
+  }
+
+  .auth-card-actions {
+    padding-top: 24px;
+    padding-right: 24px;
+    padding-left: 24px;
+    padding-bottom: 24px;
+  }
+}
+
+.app-logo {
+  img {
+    margin-bottom: 16px;
+    margin-top: 200px;
+
+    @media only screen and (max-width: 600px) {
+      margin-top: 100px;
+    }
+  }
+
+}
+
+.toolbar-icon {
+  padding-left: 14px;
+  padding-right: 14px;
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 32px;
+  padding-top: 8px;
+}
+
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+.full-width-input {
+  width: 100%;
+}
+
+.mat-card-avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+
+.mat-card-actions {
+  margin-left: 0px;
+  margin-right: 0px;
+  padding: 0;
+  text-align: center;
+}
+
+.auth-success-icon {
+  font-size: 128px;
+  color: teal;
+}
+
+.auth-error-icon {
+  font-size: 128px;
+  color: red;
+}

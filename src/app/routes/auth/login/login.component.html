@@ -1,0 +1,58 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+
+  <div class="app-logo">
+    <a [routerLink]="['/']">
+      <img src="assets/angular-pwa-logo.png">
+    </a>
+  </div>
+  <div>
+    <mat-card class="auth-card" *ngIf="!logged">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <mat-toolbar color=primary>
+          <mat-toolbar-row>
+            <mat-icon class="toolbar-icon">account_circle</mat-icon>
+            <h2>LOGIN</h2>
+          </mat-toolbar-row>
+        </mat-toolbar>
+        <mat-card-content class="auth-card-content">
+          <p>Please login to continue</p>
+          <mat-form-field class="full-width-input">
+            <input matInput placeholder="Email" formControlName="email" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+            <mat-error *ngIf="isFieldInvalid('email')">
+              No valid email address!
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="full-width-input">
+            <input matInput type="password" placeholder="Password" formControlName="password" minlength="6" required>
+            <mat-error *ngIf="isFieldInvalid('password')">
+              No valid password!
+            </mat-error>
+          </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions class="auth-card-actions">
+          <button mat-stroked-button color="accent" [disabled]="!form.valid || loading" type="submit" style="float: left; margin-top: -24px;">
+            <mat-spinner color="accent" *ngIf="loading" diameter="32" style="margin-left: calc(50% - 16px);"></mat-spinner>
+            <ng-container *ngIf="!loading">LOGIN</ng-container>
+          </button>
+          <a mat-button color="primary" [disabled]="loading" [routerLink]="['/auth/signup']" routerLinkActive="active"
+            style="float: right; margin-top: -24px;">REGISTER</a>
+            <br>
+            <a [routerLink]="['/auth/password-reset']">Olvido su clave?</a>
+        </mat-card-actions>
+      </form>
+    </mat-card>
+  </div>
+  <div class="auth-card-content" *ngIf="logged" fxLayoutAlign="center">
+    <div>
+      <mat-icon class="auth-success-icon">check_circle_outline</mat-icon>
+      <h3>Ingreso con exito!</h3>
+    </div>
+  </div>
+  <div class="auth-card-content" *ngIf="notVerified && !logged" fxLayoutAlign="center">
+    <div>
+      <mat-icon class="auth-success-icon">check_circle_outline</mat-icon>
+      <h3>Ingreso con exito!</h3>
+    </div>
+  </div>
+
+</div>
