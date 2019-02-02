@@ -37,6 +37,10 @@ const routes: Routes = [
       }
     ]
   },
+  {
+    path: 'error',
+    loadChildren: '../errors/errors.module#ErrorsModule'
+  },
   // No path found
   { path: '**', redirectTo: '/' },
 ];
